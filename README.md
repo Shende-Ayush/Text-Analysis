@@ -29,7 +29,8 @@ Sentimental analysis is the process of determining whether a piece of writing is
    ### Polarity Score: 
             This is the score that determines if a given text is positive or negative in nature. It is calculated by using the formula: 
             `Polarity Score = (Positive Score – Negative Score)/ ((Positive Score + Negative Score) + 0.000001)` Range is from -1 to +1
-   ### Subjectivity Score: This is the score that determines if a given text is objective or subjective. It is calculated by using the formula: `Subjectivity Score = (Positive Score + Negative Score)/ ((Total Words after cleaning) + 0.000001)` Range is from 0 to +1
+   ### Subjectivity Score: 
+   This is the score that determines if a given text is objective or subjective. It is calculated by using the formula: Subjectivity Score = (Positive Score + Negative Score)/ ((Total Words after cleaning) + 0.000001) Range is from 0 to +1
             
 # 2 Analysis of Readability
 Analysis of Readability is calculated using the Gunning Fox index formula described below.
@@ -46,8 +47,8 @@ Complex words are words in the text that contain more than two syllables.
 
 # 5 Word Count
 We count the total cleaned words present in the text by
-    1. removing the stop words (using stopwords class of nltk package). 
-    2. removing any punctuations like ? ! , . from the word before counting.
+    ##  1. removing the stop words (using stopwords class of nltk package). 
+    ##  2. removing any punctuations like ? ! , . from the word before counting.
     
 # 6 Syllable Count Per Word
 We count the number of Syllables in each word of the text by counting the vowels present in each word. We also handle some exceptions like words ending with "es","ed" by not counting them as a syllable.
