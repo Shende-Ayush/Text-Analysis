@@ -16,20 +16,20 @@ Objective of this document is to explain methodology adopted to perform text ana
 
 # 1 Sentimental Analysis
 Sentimental analysis is the process of determining whether a piece of writing is positive, negative, or neutral. The below Algorithm is designed for use in Financial Texts. It consists of steps:
-   ## 1.1 Cleaning using Stop Words Lists
-            The Stop Words Lists (found in the folder StopWords) are used to clean the text so that Sentiment Analysis can be performed by excluding the words found in Stop Words List.            
-   ## 1.2 Creating a dictionary of Positive and Negative words
-            The Master Dictionary (found in the folder MasterDictionary) is used for creating a dictionary of Positive and Negative words. We add only those words in the dictionary if they are not found in the Stop Words Lists.
-   ## 1.3 Extracting Derived variables
-            We convert the text into a list of tokens using the nltk tokenize module and use these tokens to calculate the 4 variables
-            ### `Positive Score:
+   ### 1.1 Cleaning using Stop Words Lists
+   The Stop Words Lists (found in the folder StopWords) are used to clean the text so that Sentiment Analysis can be performed by excluding the words found in Stop Words List.            
+   ### 1.2 Creating a dictionary of Positive and Negative words
+   The Master Dictionary (found in the folder MasterDictionary) is used for creating a dictionary of Positive and Negative words. We add only those words in the dictionary if they are not found in the Stop Words Lists.
+   ### 1.3 Extracting Derived variables
+   We convert the text into a list of tokens using the nltk tokenize module and use these tokens to calculate the 4 variables
+   #### Positive Score:
             This score is calculated by assigning the value of +1 for each word if found in the Positive Dictionary and then adding up all the values.`
-   ### `Negative Score: 
+   #### Negative Score: 
             This score is calculated by assigning the value of -1 for each word if found in the Negative Dictionary and then adding up all the values. We multiply the score with -1 so that the score is a positive number.`
-   ### Polarity Score: 
+   #### Polarity Score: 
             This is the score that determines if a given text is positive or negative in nature. It is calculated by using the formula: 
             `Polarity Score = (Positive Score – Negative Score)/ ((Positive Score + Negative Score) + 0.000001)` Range is from -1 to +1
-   ### Subjectivity Score: 
+   #### Subjectivity Score: 
             This is the score that determines if a given text is objective or subjective. It is calculated by using the formula: 
             `Subjectivity Score = (Positive Score + Negative Score)/ ((Total Words after cleaning) + 0.000001)` Range is from 0 to +1
             
